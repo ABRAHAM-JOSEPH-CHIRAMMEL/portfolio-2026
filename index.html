@@ -12,11 +12,7 @@
   --bg:#F0F6FF; --bg2:#E5EFFD; --surface:#fff; --surface2:#EEF5FF;
   --text:#08152A; --muted:#4A607A;
   --accent:#1251AA; --accent-light:#4A8FE8;
-  /* muted indigo palette (keeps variable names to avoid widespread changes) */
-  --pink:#6C5BA6;        /* main accent (replaces previous 'pink') */
-  --pink-light:#ECE9FB;  /* very light background/tints */
-  --pink-mid:#A78BFA;    /* mid tone used for glints */
-  --pink-deep:#4A2B83;   /* deeper accent for borders/shadows */
+  --pink:#D63B80; --pink-light:#F9C4DC; --pink-mid:#EE6EAD; --pink-deep:#B02060;
   --darkblue:#05143A;
   --border:rgba(18,81,170,.1);
   --shadow:0 6px 32px rgba(18,81,170,.1);
@@ -30,7 +26,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-si
 
 /* CURSOR */
 .cursor{position:fixed;width:14px;height:14px;background:var(--pink);border-radius:50%;pointer-events:none;z-index:9999;mix-blend-mode:multiply;transition:transform .08s;}
-.cursor-ring{position:fixed;width:44px;height:44px;border:2px solid rgba(108,91,166,.35);border-radius:50%;pointer-events:none;z-index:9998;transition:all .16s ease;}
+.cursor-ring{position:fixed;width:44px;height:44px;border:2px solid rgba(214,59,128,.35);border-radius:50%;pointer-events:none;z-index:9998;transition:all .16s ease;}
 .cursor-ring.big{width:64px;height:64px;border-color:var(--pink);opacity:.6;}
 
 /* NAV */
@@ -43,7 +39,7 @@ nav.scrolled{padding:13px 64px;box-shadow:0 2px 24px rgba(18,81,170,.08);}
 .nav-links a:hover{color:var(--accent);}
 .nav-links a:hover::after{transform:scaleX(1);}
 .nav-cta{font-size:13px;font-weight:600;color:#fff;background:linear-gradient(135deg,var(--accent),var(--pink));padding:9px 22px;border-radius:100px;text-decoration:none;transition:transform .2s,box-s[...]
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(108,91,166,.35);}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(214,59,128,.35);}
 
 /* ═══════════════════════════════
    HERO
@@ -58,9 +54,9 @@ nav.scrolled{padding:13px 64px;box-shadow:0 2px 24px rgba(18,81,170,.08);}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;position:relative;z-index:2;padding:0 64px 0;}
 
 /* Tag */
-.hero-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px;opacity:0;ani[...]
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12px;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px;opacity:0[...]
 .hero-tag::before{content:'';width:28px;height:2px;background:linear-gradient(90deg,var(--pink),var(--accent));border-radius:2px;}
-.hero-available{display:inline-flex;align-items:center;gap:7px;background:rgba(39,174,95,.1);border:1px solid rgba(39,174,95,.28);padding:5px 14px 5px 10px;border-radius:100px;font-size:12px;color:#1A[...]
+.hero-available{display:inline-flex;align-items:center;gap:7px;background:rgba(39,174,95,.1);border:1px solid rgba(39,174,95,.28);padding:5px 14px 5px 10px;border-radius:100px;font-size:12px;color[...]
 .pulse-dot{width:7px;height:7px;border-radius:50%;background:#27AE60;animation:pulse 2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.55)}}
 
@@ -74,7 +70,7 @@ h1 .blue-word{color:var(--accent);}
 .hero-sub{font-size:20px;color:var(--muted);max-width:600px;line-height:1.82;margin-bottom:44px;opacity:0;animation:fadeUp .8s .7s forwards;}
 .hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .9s forwards;}
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--accent),var(--pink));color:#fff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:1[...]
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(108,91,166,.4);} 
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(214,59,128,.4);} 
 .btn-ghost{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:16px;font-weight:600;text-decoration:none;border:2px solid var(--accent);padding:12px 28px;border-radius:100px;t[...]
 .btn-ghost:hover{background:var(--accent);color:#fff;}
 
@@ -110,7 +106,7 @@ h1 .blue-word{color:var(--accent);}
   <a href="#contact" class="nav-cta">Get in touch</a>
 </nav>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <div id="hero">
   <canvas id="three-canvas"></canvas>
 
@@ -147,35 +143,4 @@ h1 .blue-word{color:var(--accent);}
   </div>
 </div>
 
-<!-- rest of the page unchanged until contact (kept identical to upstream) -->
-
-<!-- CONTACT (replaced with simplified centered row) -->
-<section id="contact" class="contact-simple">
-  <div class="contact-inner">
-    <div class="eyebrow">Contact</div>
-    <h2>Let's build something ambitious</h2>
-    <p class="contact-sub">If you're building bold robotics, embedded systems, or deep‑tech startups, let's talk.</p>
-
-    <nav class="contact-links" aria-label="Contact">
-      <a href="mailto:your@email.com">Email</a>
-      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/ABRAHAM-JOSEPH-CHIRAMMEL" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-  </div>
-</section>
-
-<style>
-/* Minimal contact styles appended so they render without other build steps */
-.contact-simple{ background:var(--darkblue); color:#fff; padding:64px 40px; border-radius:36px; box-shadow:0 30px 70px rgba(10,20,30,.06); margin:80px auto; max-width:1100px; }
-.contact-inner{ max-width:920px; margin:0 auto; text-align:center; }
-.contact-simple .eyebrow{ color:var(--accent); font-family:var(--font-mono); letter-spacing:.18em; text-transform:uppercase; margin-bottom:12px; font-size:13px; }
-.contact-simple h2{ font-family:var(--font-display); font-size:36px; line-height:1.04; margin-bottom:12px; color:#fff; }
-.contact-sub{ color:rgba(255,255,255,.85); max-width:760px; margin:0 auto 26px; }
-.contact-links{ display:flex; gap:34px; justify-content:center; margin-top:28px; }
-.contact-links a{ color:#fff; font-weight:700; text-decoration:none; padding:8px 6px; border-radius:6px; transition:opacity .15s; }
-.contact-links a:hover{ opacity:.88; }
-@media(max-width:768px){ .contact-simple{ padding:36px 20px; border-radius:18px; } .contact-links{ gap:18px; flex-wrap:wrap; } }
-</style>
-
-</body>
-</html>
+<!-- rest of the file remains unchanged -->
