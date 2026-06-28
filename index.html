@@ -279,8 +279,15 @@ h3{font-family:var(--font-display);font-size:20px;font-weight:700;}
 .contact-desc{color:var(--muted);font-size:18px;line-height:1.85;max-width:560px;margin:0 auto 40px;position:relative;z-index:1;}
 .contact-links-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:1;}
 .contact-pill{font-family:var(--font-body);font-size:15px;font-weight:600;color:var(--text);background:var(--surface2);border:1.5px solid var(--border);padding:13px 30px;border-radius:100px;text-decoration:none;transition:all .25s;}
+.contact-pill-cv{background:linear-gradient(135deg,var(--accent),var(--pink));color:#06121F !important;border-color:transparent !important;}
 .contact-pill:hover{background:linear-gradient(135deg,var(--accent),var(--pink));color:#06121F;border-color:transparent;transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,212,184,.28);}
 
+
+/* FLOATING CV BUTTON */
+.cv-fab{position:fixed;bottom:32px;right:32px;z-index:999;display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--accent),var(--pink));color:#06121F;font-family:var(--font-body);font-size:14px;font-weight:700;padding:14px 22px;border-radius:100px;text-decoration:none;box-shadow:0 6px 28px rgba(0,212,184,.35);transition:transform .2s,box-shadow .2s,opacity .3s;letter-spacing:.02em;}
+.cv-fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 36px rgba(0,212,184,.45);}
+.cv-fab svg{width:18px;height:18px;flex-shrink:0;}
+@media(max-width:768px){.cv-fab{padding:12px 16px;font-size:13px;bottom:20px;right:16px;}}
 /* FOOTER */
 footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-items:center;justify-content:space-between;background:var(--surface);}
 .footer-logo{font-family:var(--font-mono);font-size:15px;color:var(--accent);font-weight:700;}
@@ -382,7 +389,7 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
 
   <div class="hero-inner">
     <div>
-      <div class="hero-tag">ECE Engineer &middot; Kerala, India &middot; 2026</div>
+      <div class="hero-tag">ECE Engineer &middot; Punkunnam, Thrissur, Kerala</div>
       <h1>I build the <em id="typed-word">machines<span class="typed-caret"></span></em><br>that power<br><span class="blue-word">tomorrow.</span></h1>
       <p class="hero-sub">Final-year B.Tech ECE at Christ College of Engineering. I work across the full embedded stack &mdash; PCB design in KiCad, microcontroller firmware, IoT architecture, and real-time robotics.</p>
       <div class="hero-actions">
@@ -468,10 +475,10 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
       <div class="edu-card reveal">
         <div class="edu-label">Current Education</div>
         <div class="edu-school">Final Year B.Tech &mdash; Electronics &amp; Communication Engineering</div>
-        <div class="edu-detail">Christ College of Engineering &middot; KTU (APJ Abdul Kalam Technological University)</div>
+        <div class="edu-detail"><a href="https://cce.edu.in/" target="_blank" style="color:var(--text);text-decoration:none;border-bottom:1px solid var(--accent);">Christ College of Engineering</a> &middot; KTU &middot; <strong>Graduating 2027</strong></div>
         <div style="margin-top:18px;">
           <div class="edu-label">Schooling</div>
-          <div class="edu-school" style="font-size:16px;">Devamatha CMI Public School, Thrissur</div>
+          <div class="edu-school" style="font-size:16px;"><a href="https://www.devamatha.com/" target="_blank" style="color:var(--text);text-decoration:none;border-bottom:1px solid var(--pink);">Devamatha CMI Public School, Thrissur</a></div>
           <div class="edu-detail">Higher Secondary &middot; Bio-Maths Stream</div>
         </div>
       </div>
@@ -479,7 +486,7 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
     <div>
       <div class="about-photo-card reveal-pop">
         <img src="https://abrahamjoseph.lovable.app/__l5e/assets-v1/82d69a92-f6a5-4491-9e00-38bfa70a4d5a/abraham.png" alt="Abraham Joseph" class="about-photo"/>
-        <div class="about-photo-footer">PLATE 01 &middot; ABRAHAM JOSEPH &middot; 2026</div>
+        <div class="about-photo-footer">PLATE 01 &middot; ABRAHAM JOSEPH &middot; 2027</div>
       </div>
     </div>
   </div>
@@ -510,21 +517,21 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
       <div class="project-title">IoT Smart Automation System</div>
       <div class="project-desc">GSM/WiFi connected automation rig with real-time sensor relay to cloud. Full KiCad schematic to SIM800L firmware pipeline.</div>
       <div class="project-tags"><span class="project-tag">SIM800L</span><span class="project-tag">WiFi</span><span class="project-tag">Sensor Fusion</span><span class="project-tag">Firmware</span></div>
-      <span class="project-arrow">&#8594;</span>
+      <span class="project-arrow" style="font-size:11px;font-family:var(--font-mono);letter-spacing:.06em;color:var(--muted)">Case study on request</span>
     </div>
     <div class="project-card reveal-pop">
       <div class="project-num"><span>02</span><span class="project-year">2024</span></div>
       <div class="project-title">Microcontroller Robotics Architecture</div>
       <div class="project-desc">Autonomous hardware on TIVA C. Real-time movement loops, sensor fusion, interrupt-driven logic in C++.</div>
       <div class="project-tags"><span class="project-tag">C++</span><span class="project-tag">TIVA C</span><span class="project-tag">Arduino</span><span class="project-tag">HDL</span></div>
-      <span class="project-arrow">&#8594;</span>
+      <span class="project-arrow" style="font-size:11px;font-family:var(--font-mono);letter-spacing:.06em;color:var(--muted)">Case study on request</span>
     </div>
     <div class="project-card reveal-pop">
       <div class="project-num"><span>04</span><span class="project-year">2024</span></div>
       <div class="project-title">AutoCAD + 3D Prototyping Pipeline</div>
       <div class="project-desc">PCB enclosures from KiCad footprints to AutoCAD to 3D-printed physical iterations. Full DFM pipeline.</div>
       <div class="project-tags"><span class="project-tag">AutoCAD</span><span class="project-tag">KiCad</span><span class="project-tag">3D Printing</span><span class="project-tag">DFM</span></div>
-      <span class="project-arrow">&#8594;</span>
+      <span class="project-arrow" style="font-size:11px;font-family:var(--font-mono);letter-spacing:.06em;color:var(--muted)">Case study on request</span>
     </div>
   </div>
 </div>
@@ -564,8 +571,8 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
 <!-- MARQUEE 3 -->
 <div class="big-scroll-text" style="background:linear-gradient(90deg,rgba(0,153,255,.05),rgba(0,212,184,.06));">
   <div class="big-scroll-inner" style="animation-duration:16s;">
-    <span class="big-scroll-word">100+ STUDENTS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word filled">7+ SCHOOLS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word">3 HACKATHONS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word">2 INTERNSHIPS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word filled">KOCHI &bull; BENGALURU</span><span class="big-scroll-sep">/</span>
-    <span class="big-scroll-word">100+ STUDENTS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word filled">7+ SCHOOLS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word">3 HACKATHONS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word">2 INTERNSHIPS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word filled">KOCHI &bull; BENGALURU</span><span class="big-scroll-sep">/</span>
+    <span class="big-scroll-word">100+ STUDENTS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word filled">7+ SCHOOLS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word">3 HACKATHONS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word">4 INTERNSHIPS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word filled">KOCHI &bull; BENGALURU</span><span class="big-scroll-sep">/</span>
+    <span class="big-scroll-word">100+ STUDENTS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word filled">7+ SCHOOLS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word">3 HACKATHONS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word">4 INTERNSHIPS</span><span class="big-scroll-sep">/</span><span class="big-scroll-word filled">KOCHI &bull; BENGALURU</span><span class="big-scroll-sep">/</span>
   </div>
 </div>
 
@@ -581,7 +588,7 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
     <div class="award-billboard-content">
       <div class="award-billboard-name">IEEE QBit Hackathon &mdash; 2nd Prize</div>
       <div class="award-billboard-org">The Summit of Future 2026 &middot; JAIN University &middot; &#8377;30,000 Prize</div>
-      <span class="award-billboard-year">2024</span>
+      <span class="award-billboard-year">2026</span>
     </div>
   </div>
 
@@ -592,7 +599,7 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
     <div class="award-billboard-content">
       <div class="award-billboard-name">Google AI Campus Fest &mdash; 3rd Prize</div>
       <div class="award-billboard-org">TensorFlow Hackathon &middot; Organised by SCET &middot; ML/DL Track</div>
-      <span class="award-billboard-year">2024</span>
+      <span class="award-billboard-year">2023</span>
     </div>
   </div>
 
@@ -603,12 +610,13 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
     <div class="award-billboard-content">
       <div class="award-billboard-name">SAE India &mdash; Best Software Award</div>
       <div class="award-billboard-org">Christ College of Engineering &middot; SAE India National Event</div>
-      <span class="award-billboard-year">2024</span>
+      <span class="award-billboard-year">2025</span>
     </div>
   </div>
 
   <!-- Simple rows for cert/immersion -->
   <div class="awards-list" style="margin-top:40px;">
+    <div class="award-row"><div class="award-row-top"><div class="award-left"><div><div class="award-name">NIT Debugging Challenge &mdash; 1st Place</div><div class="award-org">National Institute of Technology</div></div></div><div class="award-year">2024</div></div></div>
     <div class="award-row"><div class="award-row-top"><div class="award-left"><div><div class="award-name">NPTEL National Certification</div><div class="award-org">Embedded Systems</div></div></div><div class="award-year">2023</div></div></div>
     <div class="award-row"><div class="award-row-top"><div class="award-left"><div><div class="award-name">Industry Immersion &mdash; Embedded Systems</div><div class="award-org">Digital Academy</div></div></div><div class="award-year">2024</div></div></div>
   </div>
@@ -643,7 +651,7 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
       <p>Outside engineering, I paint and play badminton &mdash; both reward the same patience and attention to detail that goes into debugging a board or laying out a schematic.</p>
     </div>
     <div class="about-body reveal">
-      <p>I grew up in Thrissur in a close-knit family &mdash; son of Joseph Itteera and Julie George, and brother to George Joseph. That sense of community shapes how I approach teamwork and the training sessions I run.</p>
+      <p>I grew up in Thrissur, Kerala, and that close-knit community sensibility shapes how I approach teamwork and the training sessions I run across institutions.</p>
     </div>
   </div>
 </div>
@@ -652,7 +660,7 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
   <div class="contact-card reveal-zoom">
     <div class="section-eyebrow" style="justify-content:center;">07 &mdash; Contact</div>
     <h2>Let's build something <em>considered.</em></h2>
-    <p class="contact-desc">Open to roles and collaborations in embedded systems, IoT, and robotics &mdash; Bengaluru, Kochi, Hyderabad, Chennai, or remote.</p>
+    <p class="contact-desc">Open to roles in embedded systems, IoT, and robotics. Based in Punkunnam, Thrissur, Kerala &mdash; open to relocation and remote.</p>
     <div class="contact-links-row">
       <a href="mailto:abrahamjosephxd@gmail.com" class="contact-pill">Email</a>
       <a href="https://www.linkedin.com/in/-abrahamjoseph/" target="_blank" class="contact-pill">LinkedIn</a>
@@ -665,7 +673,7 @@ footer{border-top:1px solid var(--border);padding:38px 64px;display:flex;align-i
 
 <footer>
   <div class="footer-logo">A &middot; J &mdash; Abraham Joseph</div>
-  <div class="footer-copy">&copy; 2026 &mdash; Designed &amp; built in Kerala, India</div>
+  <div class="footer-copy">&copy; Abraham Joseph</div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -873,5 +881,13 @@ function handleSubmit(e){
   });
 })();
 </script>
+
+<!-- FLOATING CV DOWNLOAD -->
+<a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIgL0Y0IDUgMCBSIC9GNSA3IDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1PYmxpcXVlIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMyAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjUgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtQm9sZE9ibGlxdWUgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0Y0IC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNiAwIG9iago8PAovQ29udGVudHMgMTIgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMTEgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL0Jhc2VGb250IC9aYXBmRGluZ2JhdHMgL05hbWUgL0Y1IC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKOCAwIG9iago8PAovQ29udGVudHMgMTMgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMTEgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjkgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyAxMSAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjEwIDAgb2JqCjw8Ci9BdXRob3IgKFwoYW5vbnltb3VzXCkpIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjA2MjMxMTA1NDMrMDAnMDAnKSAvQ3JlYXRvciAoXCh1bnNwZWNpZmllZFwpKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjA2MjMxMTA1NDMrMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAoXCh1bnNwZWNpZmllZFwpKSAvVGl0bGUgKFwoYW5vbnltb3VzXCkpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKMTEgMCBvYmoKPDwKL0NvdW50IDIgL0tpZHMgWyA2IDAgUiA4IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKMTIgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMjk2OQo+PgpzdHJlYW0KR2IhI14/JEcjNiZxMDVQUiZAUkU+TjZqXChjWTxYSkNEamwlMGNMdWdwUVxzQ14mPkAoPDdOPVY4KiJpakEuMHErQmJNPEJgbEBBUmI9Ll9aVVpYITJaPTlcZ0MiJi0+Vz1rbzVSX1VNSlFUSmVtTmpqXF0+KjZjQFV1QztbZ2dlRVRQSWJYYTZacSc0aFJtMUs2NkhEa1txSFVsUFpAIj8pcD04P0crMCk4W1NvTihaR2MrKGhzNWxRTGJkPWVkOFNpXV5QXTkxLHRhNS9kPkRIbCRESmMwJkQ2WCI1SkFuQ05DM0RvRylrIWctbUwnRnE6aFI5dUJddSNJXCFLL048PnRERUVFQEkhX25aNks8cFptVEdoRmotVz4kQkwpI0FUNSprYGBWPGJsRVREMEoybCwyXiV0K00tWDUxNDhvWF0zLXMsYk45XHRsJiE2UjZLVXIhcy9hJXMxVSNxOyRRa0dLZjY0cjhhKTRWb0BrIzUuWTxLZ1NBSSRJOFdHP0BGR2xkPWpLQkZPQjpkJ0MkLz49QDYwZk1ZS3JjbUNqYzFtRSFgamg9JyglPUluUEVkWWBTTUxESl9XTCpjVD8kYSIzWC1IbCZiIjZFa2MoMmlPPmIoQk1gJFMpMi5dQk07NFVVaS1xIUliZjFPZSM/aU4/YzdQcVMzNXNIJTlkTzpAbFZxQ2p0NENVUiRZZjppYSlbQ25tTnJgMFosRTBFWTNqOS9VNTJOYGxuTEkyIk9rNzZGKCZBVlpIZkg1TkVFXEU2YGoncTJoXEFQX0JFNVBBbW9CXGVAKTwvRVMucSdtLGhdaWgjK1FyalRhOT1sXzp0X18kcWUjOSNEZmZmXV9dLls4LTNTLiYySyskU0ptZi0nLVwvM0ZOPFNPKCYjPU4rX11ka0khamdtZWReNU5AbVFebVJualVMJjE7UExaMkJuSldfb3MqPWFcQ1ooNlEqNUdCRy5kXl0taGIkPEY/X2txZT85ZSYwVkFWRWdSM3JhXnMrcTRMbjhudSE2M145cWo9JFs3XD1aYFlvI00xbz9RKystT3FfTmYySD89WGo9aUU2Mks4NHRdNlVTMihkIWBbOUJ0P1xGR1k3R0BVJzFJKUwqXkdCOTsqX2FoN3MmQCs4aG8jJi1iTjZYalZVW0FdR1w9aDRlQCZ0YGc5TSJUcWBmPSRWZlxvblQ8Ti9kPVI3PSlNaW5EX1c5LiErX0dxIXJJNkxOVERycFEoXEZtPDMiOVteciRBVSdhVCtCJGNQLiw2JltKTiJtPzI3TlA9aSNsYGpdLGAkJHJWVlVSTkUoLig7aV9UYSQtNE07OydrZk5SRi4uKDprNT9zNklzaGEwOjlYOWQhNSRzXEpFMlxkLyU+YnM3SDNxSVhbdSFyb0YwTCppIUdecz9vR2FhW0cuJjtFSFpJKWNKQChVay0mK1FjO11saE5YMk1dJjQkQnRXZWZ1I0U7big6ZUNTKVlgJi9ObjFjV2VvPWFqJlZOPzhwXzBITjRtciZNWSVqWUk/MG5sLF40S0VbJyJCak0oajdvb3I3RjY+TCUxRDJzMW5KbzJBK0hIc0xOZyReUGhaZCJcUDdhZTFHTVlDRCNpKC4iOj5jaGheOk5fdSEjalowIWRMQjBmbm5XWFRFcE87SjA0JUQhbWlBcmNFKyFjP3M0cnRJKWYlc1wzKzxwTHJvLHA3UCpNViNkRm5TUzVwQS8jKCE1JGA7WF5bclZnX2c+N3EiXW1XYF0wT1BMQVY+SCs1ZlYxK1JSP1FsQiQ0USU6KTxmR21EaElAN1hwYiNeLCdxQTNgIzxaImpAXlYrX1AtZiw1YU5PNltMJkRRNSNiP25LQC8udFJyblJbZkFsR25HN1AmdSZTcGduLFlERyVVNCghYGZvMzA5JCZ0TCI8LnAzbWYxJlYtSGZBOUFmTUZQIU5QayNVT1dObkBAO0FNYlghNU1TQVIpK2M1YyQ+Xys9TCJaUD0kVTFdUW9FL2xZQTBbIWZTLldxOiRKKyRBYyk/UV1WXTkrKEE9YCgpaXI9WFtBZGE3QVFHcUNFamQxcGApPzNLPHI+bDNKXkhBOlxMVztLVHJ0Q0JII3JVISFHXjkzKHReQTNFOWk+WThALXQ2J20/U3UrJDJkIjVsL0JBRDJHcXJkX2JQcFpOTj9dQ2EqRjxlKlBuMDp0YkYkPm42OTM5bj9jJ19hOUEoZ11HKyczJURvcC44Ujk0QmNmJHEwcltlUzhkai1QOD9bOCJuQCc/M1RXOydoMXAiZT8/JyFcLSo+LDJIJUtmbF4qRGBwSEFCT29mYXFUVCE/WD1OI2UuJmJWP25GZ2s7azooXW10Jk0xP3FJWDVPTE5XRlk9YGY+JWlWQilPLCQzTFs6VDVfOT4pbWw6L3I7QlBqc3FtKUM/UkZCKmg0SVFXPChJSHFEcD83Si10RiZlUko7ViRgVlssP3VqLGA1T2tLXD9BQmhLN2RILmghUDJEcFJmUVlnV0JaMFliSypMJC42R1glXDshK1VkRiNscTpkVzQ6VWZedF5Maz5KRWhBVVlGUj5waVdiMCwtZEVhVkJCb2s5cUUsO0s9WmBAOj05TFZqWWU6PjpUTUgpWmNJNkVfVTRIW1pjUiokbGpXYkE9JSxgU2VUPCRwX1whRjZvbnBlIjxMJ0A2JV48PEk7PCNqMGZMZDdEX2U7QkJyJWdsKnUwblFoO2drVD10Z2tkOVw7MFJbR2tDK14yNDpJVTUwTF1lR3NKQTJdQSxYN0ciX3VjP2hVMHE0KjcqMj9GXz00dFA3ZlBvSF43Vz0nJkdKZV9YK0pzQiQ/cW1jR1pCaF9jc1MjKyxXTyI0KSRzTThoTztvaCVMMHV1UGQ+bUVicVtgMDlTYTVpOj1TTjdIQUwmKyxPWSssR3JOalU9bUJTO14oJiJKKmx0VzU5LWxPbUotQjlRbj8hJCNNM1pDNCY7TjVZcFJcNm4iKGZuRlAqV1NRbChCMXRTdTpdL2JdLSpqWT43NmtmZUk4Q1ZHVnUyJGFuXHJqYy5bNlphKyNRODg3RzY4PE9kSWxxRFlrIlkrOEYnN0NhUmFOYV5xUURJLU0sInFPK1hUSCsuayFEPFloTkd1NWgpY2xpTlIlKCw0Tmh1MlUwLzxJbzczZ00uT2g0QjZxQVVHQjM0WSQ2W25mNDREO2deSDohOVAoN2kqP0tkKCopVkYkdEVKVTJmWTRRLjZCbCQ4PzM7PjdJTFtXUUhDLihMbj9rSFJqYzZzV3RBI1lKcWwiSltNP3EpUkV0X0JoVSZhYHNpJWpfL3UzSVhiXXJzK245Sy8wRWBBXCNGbzQvLXI3RztWcCwrcVxHKSQ0PEFoZTpDQWIpJV1Sb1VndWlic01lb1lfP1QoRCtXQTNJNS9GcCRgQig3JU85NyNFbEJwW0suJTNUIU9pOlc5aUZTQyMoNnU1TFRPKkFgNDp1VSRUXlVjK3QnMGl1PChwUWlTaWwpZ0pvTmshcFkxKXRkRS1jRCVGJDNBMilVQlNsXnQjKjZBQ1I8Iko7OWxPNFFjMGFIO0xbWyhgTU5QYiVFLzNUW2cjU2VeZ3VsKzRgVklaO1EsZGFkWlp0RGVuPFArc2IkNT8qU1JnKFgnMlBQZ3VILU5CQm4nZ11DX1tHW0BocWNncExmTDMic14lIkAkcXFdNmRpUGdxRVBuU2phQkhdLSQlcSNGT11pZW1SZGA9X0RFQVRqNjIxXDNLJFxWYCpqLEk7P2M1YU0zZis9XT9cWWhoVj9xZyJqJTdqOXIqcWBJZCxSNm5AdGIyT0FAJyonUkpvJCJQaSU0KT47JUcnN1lydW1KWjhsO1ZNNiZYT3BlYWJEQmZzPkYjRzxbR0IyU2pWcS5FS3FiPXFrSUxeN0M4U0ZdRmQzKFFfJlRCWDRUNlJYMVIzKCIpTz1zKmlnMkBLfj5lbmRzdHJlYW0KZW5kb2JqCjEzIDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDI5MTUKPj4Kc3RyZWFtCkdiISNePkJlZGwmcTgwMVcyRFokIylNXV9dTz9uMy1AZCs1UCs/W2xkWyZWNidARXEhOFUqRDVJXT9UZzAhVUUmS1slTHMoZHRGVDxWOmM/P1prKisiK08jQylRaitkIipmPChKbltNaSNII3NpK0lJWyRdX1RrbVpRLzRRNCwuPG4oM0ReO2o0XllncFlqXkVka0xaaiQmPzpXbmRXbEloLykpL2Y1VnM5bGM4WUo+QztJNVQkbSZjTzxCLl0pbWU6USZQXnJBZGctNT8rSk1GWSpxMk5oR3EoKFkmXl88YFBqcCdwTWVoKHFVRERtKGNTLV44QDUzSHQqJG0lamdETzNvVFI9WVFpK3BJayZqbyZCSm1aT1lpQFAxXjYxP1ArU2gpZCFfWHBiPEZLMDkrb00+OFJSLydNVzI8TllRWDw3JW0vZ1xXZGo9JiVwaF9TTGo5aUpocjtqa01JPVwuUjRPLDhPNm48TEM3ZlpkWEEiPCpga090LEsvXFJkTT0qZTg2ZGBJMGZeU0M5MCUpZy0jPCspMG9SJC11YWplSjpBNV5pRlgoWj1BKXFHJSdfNiRgYyZeQnRxTDsrTzowLENRWU1LKFVrU3VAMSNCPDFGWmNNYURmKlIxZT0lOC9VMmQoZTxASlBxWS9mYTI8alZkXSwiKEMtcS42MydyKnV0VFVuIlxOKjlWTWkqJW4tK2dkOD5fIUFgQiF0P1x1L0hvVGtdZ2BSNzdBUFFxWCt0YE9FNiUmOVN0UGxkbFhdPDNXSStsPkN0T25dOVExLDFbXTVeOUxTVmFaTUQhTkA7KVFySyVxNl1GWmlMRUVoUSdPPjFDaG5QSkZZQjAkSjI3YEdJU2kyYiMvRTAxMj9bVipQJUZkZTxFTyolazU1UCtkIXJeZmdDQDhEQVtxX2Q4XChELkhCLyZxLU1bIipyMkRubTVgJD0/Kj1iWmdNaEwmJFRfJjdFPWAiVUo1XEdEO0QtQU08cihbdCsrNTE/Syg3Qm1KYnJgYmUobTNxI1BVND9PL0YkYHM2dGQvKTptYTxiYDY5LUQjPWpeaWxVRjpGKF1lZElwTF4iOTE2JHVsYW0zcVBgaW9lOmdzPmwpO3IuQGN1OS5JUUs8Wj4sTU9xZVdAW05YaygzMWRrOjU8cWM5PlNqOjhxNGNpOSJqdVw8K0pDJ1E1OjQ4Lkckb1NUMSNNcCNUaC1gQ2RFbV9lM0RAPUFmXVMjN3BZSkkoam1cSmhfYFBNbz1bXCpnJWgmQWlqPj5rckZjRTVTOi5IKysvVSVNQ15bWEcwL2EzKlM5TktTV1lhMEAwUkxlWGAyaUtPcC4lcltANmdnaS1LQzhTZE4wY0dCWkJnKyVXakxVZkBRJz9JajFoUzdENkcmP15ES2JFVWlrcTxgQ3FmPSpTb09LWFJ0MW8iaWZDNmpYXkIxbywlb0UqLXFeRyN0Sz1TVDhAZV5saiktY0pMdCdiaC5BR3FqMUkrPmovbVNocTUhPzYpJSQzNElNQ2g9Qz1AWUo4OSUrMz1VUElpYVAlYF5NTF4xZyQ3MUZvJiIvIy1QWCRyVCFSUGIyM3JTYnBGRl5cVUpdQnBfMCVaP3QlRTs8K2JMIiUlXj9ZY0hZLDRuXjwiczc+NitjYCdmdFxIJEdcYj4mXVZxTF9SRVJgR3BaZURHIy8mN29dLVJrUTVmNDw6cUpuLllMVCxyKihDP2kqdDooVDtqNTUjSmpxaSVUYVdtNXVMTy05IVp1S2pBV1lZW0RvVyEyOCVEP0dLY2dFYnFNT3FQVkgnLyVrUUlyJjBEQFxMZCkvOjcrVnRIay5oLihYUmVua19qbDFaMlhLcjdoOzcxUi9oJ3A3RUQrTSdsJjhPNWxYMm5bK0RxRCRiSF8pZFRER21lIUc8RyYoJD1hP2xhWm9MbCRtU2FjUkcxIkt0LD01InMpVzs8NWBjMm41XDdARHIkcGBOLEUvJVZfTVNSPzBSNioqP0JTRU0uLmZULyJwJ2NWRktGVEQnISQoM0x0LjpnLEA5XkEhNjYqJCs8cklMWi5bWUYybERoI0JRSGg3YSFJb2VPXVU0JGBBcjNoaFAiai87JFMuSVJENyVVaTROcWtAMCZyZzBmaEJFb09kNDhtJ3RnQSVIUVUsMlIiOGRiSEEoI3QmVShiaGRZN2dcIWpnQVA9OG9oOEtPVVJYPWEmLWdzUD1BOjM0V1ZBM0ZhWk1eTyJhMkReVmJAZWBKWjJLSVE0UmlZJEolaUU0P1IpSmA+WVJFLiFvS1cmczZqYFE1NSZWVnMjQEspOUwmNzhcOD9IZTQ0RjUmMy5GWUhyZTYlP0wrQyxPOGMqUVRtV2NoNGoyLCEpVGByY2JsZjE9Y3BjMUNoMXUrLE8+NV0pdExXWG9CbGY2LkBgaChDPGZwOUZELUg1aEM5QSdZZFBpXCQiVHNwMihDbTdJayxhdDkra2V1NW03VU81bUVNRTs5OWg8cWltcFJeO2w1WUlsQjpHUmEyUC1iSTZjI1FabUhVQlIrZ0xdaGRaUS9cOj9HLVFDIWdKY15wYCMzXSc9bSNDJy4vLVNUKGM6XVZYOkVWPlNcY0MoU1FEPiZILTA3blU/RCdeO2BVKGsuU1JMbm1ZcENSKSk3XG1pZFRMUihpbkIuSC1hZXNkbDAsVU1FTE0tJW5RWW9iJnEzNTpkVDYjRzEhLS4tX0BxbmxmPGpHPGdIYGssIWQwbWUnKzQ7NDNUY0ZOOzpTTjZmPE8kOS04WERbS1tXMUtxLkU/LCJdNnNwSmAvXzRZVi8kcFdYLjxiVVBJcWI5XydSOC88Vz5qUTguLHA/XlgvXWRsSFE3RD1rblJNdGdNLyo1b2JqZkJIXDdYWVdeUEs1TSUkRyxMQDBsOiZqYUsnPlddQjdIJlZQSUFxWyI0W3UxLE5KYSFZLSdbW2JjTW5PciMwLmtUa1VmOGdwS2I2aDktM1A5Sk88cnNWXUFhVT9IXjprJEEsVFRGJVJSal07UCIrJTdEI01QN3NYdFpRQjVaJGpgTTc5LWVrWi9QRVhLUDNfJiMtOE5KLnFlKy9AX1hoRE9bMyw4K15NK3QuXSwjbTczLTldQ2FaS0hfIzdrQDxWQGtITD4uOiZJYz5qanMlXTlQU0JsRSRtNVYpWCM/cGM1JlVUZUFPOFlxNWJYNEg4NCRMJCxcKyZJP1dRVVBeaSJaKGJLUDU2J042ZEktWTw3WkdEUG8oWTQlbUw7QD83Xk4rRSpSa0xXPSlwa2w5K2I5W2wzaGIlN0RZbHM3Q1NjPkNKJVNNNVZSNkYzY2cvM0lZQWVqZEF1TDZQRzBtIUppPWVib3FuK1ApYjA6JyEoTyZiY1wnWDNyYUthOSJvRDNpJzVgZ1BhOFRgWCsvcE4qSzNlTUwtIWc/ZmNhOTJMTFAoIU0ka0UiOjJvKSwiU2RwTzY0QHQzKj1nP1EtQm5rayc6SzJtR2VYMShISlQlPyFFXUQ9T11TOylOLipmKEdlJHQoaDxwSG9GKDZaQltrOlpoMEhSKCwxcDkmYDtUdFEsP1pgQzhDSitOY3JaSEwoMzRTbyxuNi9XOCxCQi5yWSFsOTc8VCZJWktLJChIW2gpISdDXXFKaSZwKm49LltKJUskZitKXSVybDljJWJWbikqOXJXZDBVPT0+Q206QFpiOztjIzJFPmxXO2FoJFdubWU9KSZwLjknLixbb3UqZy9KdTJHTGBOSGEkUXFOXHJtJzRwMzYyTSRuWlQnZVUkOlk2XDBYSm1ndHJCZnM9SWZrOS5lVDYlczllZUw3NiQ7VWc4IldyVlEvZSo7N0FobzczUWwhc1huQ1VETk1aKF0wIVZETWNYcT9cRCpicyxMIitYJH4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMTQKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMzIgMDAwMDAgbiAKMDAwMDAwMDIzOSAwMDAwMCBuIAowMDAwMDAwMzUxIDAwMDAwIG4gCjAwMDAwMDA0NjYgMDAwMDAgbiAKMDAwMDAwMDU4NSAwMDAwMCBuIAowMDAwMDAwNzkwIDAwMDAwIG4gCjAwMDAwMDA4NzMgMDAwMDAgbiAKMDAwMDAwMTA3OCAwMDAwMCBuIAowMDAwMDAxMTQ3IDAwMDAwIG4gCjAwMDAwMDE0MjggMDAwMDAgbiAKMDAwMDAwMTQ5NCAwMDAwMCBuIAowMDAwMDA0NTU1IDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDBkODY5ZTE4ZjFhYzE0ZTI0MmQwMjM5YTk5MzVlYzVhPjwwZDg2OWUxOGYxYWMxNGUyNDJkMDIzOWE5OTM1ZWM1YT5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gMTAgMCBSCi9Sb290IDkgMCBSCi9TaXplIDE0Cj4+CnN0YXJ0eHJlZgo3NTYyCiUlRU9GCg==" download="Abraham_Joseph_CV.pdf" class="cv-fab">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>
+  Download CV
+</a>
 </body>
 </html>
